@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/* ── Design tokens ────────────────────────────────────── */
+:root {
+  --color-bg: #f8f9fb;
+  --color-background: #ffffff;
+  --color-background-secondary: #f1f3f7;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f1f3f7;
+  --color-border: #e2e6ed;
+  --color-text: #1a1d23;
+  --color-text-primary: #1a1d23;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+
+  --color-primary: #4f6ef7;
+  --color-primary-light: #e8ecfe;
+  --color-primary-dark: #3b55d4;
+
+  /* Task block colours */
+  --color-setup-ultimate: #7c3aed;
+  --color-setup-premium: #2563eb;
+  --color-setup-standard: #0891b2;
+  --color-revision: #d97706;
+  --color-launch: #059669;
+  --color-meeting: #dc2626;
+  --color-buffer: #94a3b8;
+  --color-break: #e2e8f0;
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-lg: 0 4px 16px rgba(0,0,0,0.08);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeIn 0.2s ease-out; }

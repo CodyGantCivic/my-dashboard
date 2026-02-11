@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Work Metrics Planner – Data Import",
+  "version": "1.0.0",
+  "description": "Auto-imports assignments, meetings, and tickets from Salesforce, Outlook, and Cloud Coach into the Weekly Planner dashboard.",
+  "permissions": [
+    "scripting",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://civicplus.lightning.force.com/*",
+    "https://*.force.com/*",
+    "https://*.visualforce.com/*",
+    "https://outlook.office.com/*",
+    "https://outlook.office365.com/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1:*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://localhost:*/*", "http://127.0.0.1:*/*"],
+      "js": ["content-bridge.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
